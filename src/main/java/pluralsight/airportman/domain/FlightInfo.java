@@ -10,95 +10,133 @@ import java.time.LocalDate;
 
 @Document("flights")
 public class FlightInfo {
-    @Id
-    private String id;
 
-    @Field("departure")
-    @Indexed
-    private String departureCity;
+  @Id
+  private String id;
 
-    @Field("destination")
-    @Indexed
-    private String destinationCity;
+  @Field("departure")
+  @Indexed
+  private String departureCity;
 
-    private FlightType type;
-    private boolean isDelayed;
-    private int durationMin;
-    private LocalDate departureDate;
+  @Field("destination")
+  @Indexed
+  private String destinationCity;
 
-    @Transient
-    private LocalDate createAt;
-    private Aircraft aircraft;
+  private FlightType type;
 
-    public FlightInfo( ) {
-        this.createAt = LocalDate.now();
-    }
+  private boolean isDelayed;
 
-    public String getId() {
-        return id;
-    }
+  private int durationMin;
 
-    public String getDepartureCity() {
-        return departureCity;
-    }
+  private LocalDate departureDate;
 
-    public void setDepartureCity(String departureCity) {
-        this.departureCity = departureCity;
-    }
+  @Transient
+  private LocalDate createAt;
 
-    public String getDestinationCity() {
-        return destinationCity;
-    }
+  private Aircraft aircraft;
 
-    public void setDestinationCity(String destinationCity) {
-        this.destinationCity = destinationCity;
-    }
+  public FlightInfo() {
 
-    public FlightType getType() {
-        return type;
-    }
+    this.createAt = LocalDate.now();
+  }
 
-    public void setType(FlightType type) {
-        this.type = type;
-    }
+  public String getId() {
 
-    public boolean isDelayed() {
-        return isDelayed;
-    }
+    return id;
+  }
 
-    public void setDelayed(boolean delayed) {
-        isDelayed = delayed;
-    }
+  public String getDepartureCity() {
 
-    public int getDurationMin() {
-        return durationMin;
-    }
+    return departureCity;
+  }
 
-    public void setDurationMin(int durationMin) {
-        this.durationMin = durationMin;
-    }
+  public void setDepartureCity(String departureCity) {
 
-    public LocalDate getDepartureDate() {
-        return departureDate;
-    }
+    this.departureCity = departureCity;
+  }
 
-    public void setDepartureDate(LocalDate departureDate) {
-        this.departureDate = departureDate;
-    }
+  public String getDestinationCity() {
 
-    public LocalDate getCreateAt() {
-        return createAt;
-    }
+    return destinationCity;
+  }
 
-    public void setCreateAt(LocalDate createAt) {
-        this.createAt = createAt;
-    }
+  public void setDestinationCity(String destinationCity) {
 
-    public Aircraft getAircraft() {
-        return aircraft;
-    }
+    this.destinationCity = destinationCity;
+  }
 
-    public void setAircraft(Aircraft aircraft) {
-        this.aircraft = aircraft;
-    }
+  public FlightType getType() {
+
+    return type;
+  }
+
+  public void setType(FlightType type) {
+
+    this.type = type;
+  }
+
+  public boolean isDelayed() {
+
+    return isDelayed;
+  }
+
+  public void setDelayed(boolean delayed) {
+
+    isDelayed = delayed;
+  }
+
+  public int getDurationMin() {
+
+    return durationMin;
+  }
+
+  public void setDurationMin(int durationMin) {
+
+    this.durationMin = durationMin;
+  }
+
+  public LocalDate getDepartureDate() {
+
+    return departureDate;
+  }
+
+  public void setDepartureDate(LocalDate departureDate) {
+
+    this.departureDate = departureDate;
+  }
+
+  public LocalDate getCreateAt() {
+
+    return createAt;
+  }
+
+  public void setCreateAt(LocalDate createAt) {
+
+    this.createAt = createAt;
+  }
+
+  public Aircraft getAircraft() {
+
+    return aircraft;
+  }
+
+  public void setAircraft(Aircraft aircraft) {
+
+    this.aircraft = aircraft;
+  }
+
+  public String toString() {
+
+    return "FlightInfo{" +
+        "id='" + id + '\'' +
+        ", departureCity='" + departureCity + '\'' +
+        ", destinationCity='" + destinationCity + '\'' +
+        ", type=" + type +
+        ", isDelayed=" + isDelayed +
+        ", durationMin=" + durationMin +
+        ", departureDate=" + departureDate +
+        ", createAt=" + createAt +
+        ", aircraft=" + aircraft +
+        '}';
+  }
 }
