@@ -98,10 +98,10 @@ public class FlightInfoQuery {
   }
 
   // 8. Find by aircraft model
-  public List<FlightInfo> findByAircraftModel(String aircraftModel) {
+  public List<FlightInfo> findByAircraftModel(String code) {
 
     Query findByAircraftModel = Query.query(Criteria
-        .where("aircraft.model").is(aircraftModel));
+        .where("aircraft.code").is(code));
 
     return this.mongoTemplate.find(findByAircraftModel, FlightInfo.class);
   }
