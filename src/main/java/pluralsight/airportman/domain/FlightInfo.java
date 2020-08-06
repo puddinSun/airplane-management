@@ -10,6 +10,7 @@ import java.time.LocalDate;
 
 @Document("flights")
 public class FlightInfo {
+
     @Id
     private String id;
 
@@ -22,83 +23,121 @@ public class FlightInfo {
     private String destinationCity;
 
     private FlightType type;
+
     private boolean isDelayed;
+
     private int durationMin;
+
     private LocalDate departureDate;
 
     @Transient
     private LocalDate createAt;
+
     private Aircraft aircraft;
 
-    public FlightInfo( ) {
+    public FlightInfo(String id) {
+
+        this.id = id;
         this.createAt = LocalDate.now();
     }
 
     public String getId() {
+
         return id;
     }
 
     public String getDepartureCity() {
+
         return departureCity;
     }
 
     public void setDepartureCity(String departureCity) {
+
         this.departureCity = departureCity;
     }
 
     public String getDestinationCity() {
+
         return destinationCity;
     }
 
     public void setDestinationCity(String destinationCity) {
+
         this.destinationCity = destinationCity;
     }
 
     public FlightType getType() {
+
         return type;
     }
 
     public void setType(FlightType type) {
+
         this.type = type;
     }
 
     public boolean isDelayed() {
+
         return isDelayed;
     }
 
     public void setDelayed(boolean delayed) {
+
         isDelayed = delayed;
     }
 
     public int getDurationMin() {
+
         return durationMin;
     }
 
     public void setDurationMin(int durationMin) {
+
         this.durationMin = durationMin;
     }
 
     public LocalDate getDepartureDate() {
+
         return departureDate;
     }
 
     public void setDepartureDate(LocalDate departureDate) {
+
         this.departureDate = departureDate;
     }
 
     public LocalDate getCreateAt() {
+
         return createAt;
     }
 
     public void setCreateAt(LocalDate createAt) {
+
         this.createAt = createAt;
     }
 
     public Aircraft getAircraft() {
+
         return aircraft;
     }
 
     public void setAircraft(Aircraft aircraft) {
+
         this.aircraft = aircraft;
+    }
+
+    public String toString() {
+
+        return "FlightInfo{" +
+                "id='" + id + '\'' +
+                ", departureCity='" + departureCity + '\'' +
+                ", destinationCity='" + destinationCity + '\'' +
+                ", type=" + type +
+                ", isDelayed=" + isDelayed +
+                ", durationMin=" + durationMin +
+                ", departureDate=" + departureDate +
+                ", createAt=" + createAt +
+                ", aircraft=" + aircraft +
+                '}';
     }
 }
