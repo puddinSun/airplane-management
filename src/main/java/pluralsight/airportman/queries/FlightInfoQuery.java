@@ -1,7 +1,5 @@
 package pluralsight.airportman.queries;
 
-import java.util.List;
-
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
@@ -11,6 +9,8 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 import pluralsight.airportman.domain.FlightInfo;
 import pluralsight.airportman.domain.FlightType;
+
+import java.util.List;
 
 @Service
 public class FlightInfoQuery {
@@ -26,7 +26,6 @@ public class FlightInfoQuery {
 
     return this.mongoTemplate.count(new Query(), FlightInfo.class);
   }
-
 
   // 1. Find all flight with paging and sorting
   public List<FlightInfo> findAll(String filed, int pageNumber, int pageSize) {

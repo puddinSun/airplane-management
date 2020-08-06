@@ -17,7 +17,7 @@ public class FlightController {
         this.query = query;
     }
 
-    @GetMapping(value = "/flights/all", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/flights/all")
     @ResponseBody
     public List<FlightInfo> getAll() {
         return this.query.findAll("departure", 0, 20);
